@@ -108,15 +108,16 @@ const newObject = array => ({
 
 
 
-let sum = function(a, b, c, d) {
+let sum = (a, b, c, d) => {
   return a + b + c + d;
 };
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = function() {
+let objectLit = () => {
   return {
     key1: 'value1',
     key2: 'value2',
@@ -128,7 +129,7 @@ let objectLit = function() {
 // console.log(objectLit());
 
 
-let sumAndProduct = function(a, b) {
+let sumAndProduct = (a, b) => {
   let sum = a + b;
   let product = a * b;
   return [sum, product];
@@ -138,12 +139,10 @@ let sumAndProduct = function(a, b) {
 // console.log(sumAndProduct(3, 9));
 
 
-let message = function(name) {
-  return `Hello, ${name}!`;
-};
+let message = name => `Hello, ${name}!`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+// console.log(message('Aloysious'));
 
 
 let Student = function(name, age, hometown) {
@@ -174,7 +173,7 @@ Student.prototype.greeting = function() {
 
 
 
-Student.courseName = function() {
+Student.courseName = () => {
   return 'This student is enrolled in Code 301.';
 };
 
@@ -198,9 +197,14 @@ Student.prototype.scopeArrow = () => console.log(this);
 // console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
+
 // 1. What is "this" when joe.scope() is invoked?
-//
+// "this" refers to the instance of the object being created by the Student constructor function
+
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// "this" in this scenario creates a window object
+
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// Arrow functions do not bind their own "this", instead, they inherit the one from the parent scope, which is called "lexical scoping". With normal functions the scoped is bound to the global one by default, arrows functions, do not have their own this but they inherit it from the parent scope, in this case the global one.
+
+// Resource: https://www.codementor.io/@dariogarciamoya/understanding-this-in-javascript-with-arrow-functions-gcpjwfyuc
