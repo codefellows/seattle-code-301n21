@@ -106,7 +106,7 @@ console.log('Hello from the new object function', newObject(['hi', 'hello', 'are
 // Refactor each function into an arrow function.
 // Write your solutions on a single line wherever possible.
 
-
+// visual example from above
 // const add = function(num1, num2) {
 //   return `${num1} + ${num2} = ${num1 + num2}`;
 // };
@@ -121,11 +121,14 @@ let sum = function(a, b, c, d) {
   return a + b + c + d;
 };
 
-const totalOneliner = (a, b, c, d) => `${a} + ${b} + ${c} + ${d} = ${a + b + c + d}`;
+// Step 10 single line solution
+let totalOneLiner = (a, b, c, d) => `${a} + ${b} + ${c} +${d} = ${a + b + c + d}`;
+// let totalOneliner = (a, b, c, d) => `${a} + ${b} + ${c} +${d} = ${a + b + c +d}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sum(1, 2, 3, 4))
-console.log(totalOneLiner(1, 2, 3, 4));
+console.log(totalOneLiner(1, 2, 3, 4))
+// console.log(totalOneLiner(1, 2, 3, 4)) (not sure why lines 125 and 129 are not working)
 
 
 let objectLit = function() {
@@ -136,8 +139,18 @@ let objectLit = function() {
   };
 };
 
+// refactored object literal
+let newObjectLit = array => ({
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3'
+})
+
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+console.log(objectLit());
+// newObjectLit wouldn't work unless I added 'array' as a parameter.
+console.log(newObjectLit());
+
 
 
 let sumAndProduct = function(a, b) {
@@ -146,8 +159,14 @@ let sumAndProduct = function(a, b) {
   return [sum, product];
 };
 
+// let newSumAndProduct = 
+//   let sum = a + b;
+//   let product = a * b;
+// })
+
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+console.log(sumAndProduct(3, 9));
+// console.log(newSumAndProduct(3, 9));
 
 
 let message = function(name) {
@@ -155,7 +174,7 @@ let message = function(name) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+console.log(message('Allie'));
 
 
 let Student = function(name, age, hometown) {
@@ -166,9 +185,18 @@ let Student = function(name, age, hometown) {
 
 let joe = new Student('Joe', 'Schmoe', 100);
 
+// My arrow function constructor 
+// let newStudent = name, age, hometown => ({
+//   this.name = name;
+//   this.age = age
+//   this.hometown = hometown;
+// });
+
+// let mark = new newStudent('Mark', 'Smaps', 50);
+
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -178,9 +206,15 @@ Student.prototype.greeting = function() {
   return `Hi, my name is ${this.name}`;
 };
 
+// Student.prototype.greeting = => {
+//   return `Hi, my name is ${this.name}`;
+// };
+
+// console.log(john.greeting());
+
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -191,7 +225,7 @@ Student.courseName = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
 
 
 
@@ -202,17 +236,18 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scope());
+console.log(joe.scope());
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(joe.scopeArrow());
+console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// This refers to joe's name, age and hometown
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// it is undefined
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// Honestly i'm not making the connection...but according to the assignment it seems that 'this' is not reset within arrow functions
+
