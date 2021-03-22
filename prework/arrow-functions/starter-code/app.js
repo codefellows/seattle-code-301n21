@@ -185,6 +185,7 @@ let Student = function(name, age, hometown) {
 
 let joe = new Student('Joe', 'Schmoe', 100);
 
+//This isn't working for some reason...
 // My arrow function constructor 
 // let newStudent = name, age, hometown => ({
 //   this.name = name;
