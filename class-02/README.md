@@ -6,6 +6,7 @@ Today's class will focus on passing information as `props` from a parent compone
 
 ## Daily Plan
 
+- [Warm-up](./WARMUP.md)
 - Introduction of today's code challenge topic
 - Code Demo
 - Lab Preview
