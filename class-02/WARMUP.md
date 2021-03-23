@@ -1,9 +1,10 @@
 # Warm-up Exercises
 
-Working in small groups, answer these two questions and write down your answers. We will review your answers together.
+Working in small groups, answer these three questions and write down your answers. We will review your answers together.
 
 1. What is deployment? What tool(s) have you used to deploy your websites before?
-2. You want to render a `CoolNumber` component within your `Main` component. Shown below are the `CoolNumber.js` file, and the `Main.js` file with two lines missing. What should those two lines look like to render 1, the loneliest number?
+2. What is an event handler?
+3. You want to render a `CoolNumber` component within your `Main` component. Shown below are the `CoolNumber.js` file, and the `Main.js` file with two lines missing. What should those two lines look like to render 1, the loneliest number?
 
 ```js
 // CoolNumber.js
