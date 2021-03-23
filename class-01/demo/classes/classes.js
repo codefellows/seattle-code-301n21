@@ -14,7 +14,7 @@ class Car {
     this.manufacturer = manufacturer;
   }
   // instance method
-  goVroom = () => {
+  goVroom() {
     console.log(`${this.name} goes vroom!`);
   }
 }
@@ -23,7 +23,7 @@ class Car {
 class Convertible extends Car {
   constructor(numCylinders, manufacturer, topDown) {
     // super calls the parent class's constructor (the Car constructor)
-    super("Cool Convertible", numCylinders, manufacturer);
+    super('Cool Convertible', numCylinders, manufacturer);
     this.topDown = topDown;
   }
 
@@ -32,7 +32,7 @@ class Convertible extends Car {
   }
 }
 
-let myCar = new Car("Civic", 4, "Honda");
+let myCar = new Car('Civic', 4, 'Honda');
 console.log(myCar);
 myCar.goVroom();
 
