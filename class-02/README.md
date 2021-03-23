@@ -7,8 +7,12 @@ Today's class will focus on passing information as `props` from a parent compone
 ## Daily Plan
 
 - [Warm-up](./WARMUP.md)
-- Introduction of today's code challenge topic
+- Introduction of today's code challenge topic, `.map`
 - Code Demo
+  - Review: Creating a React App
+  - React State
+  - react-bootstrap
+  - Deployment with Netlify
 - Lab Preview
 
 ## Learning Objectives
