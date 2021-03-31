@@ -1,5 +1,8 @@
 import React from 'react';
 import Header from './Header.js';
+
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 import './App.css';
 
 class App extends React.Component {
@@ -41,6 +44,14 @@ class App extends React.Component {
           <br />
           <input type="submit" />
         </form>
+        <Container>
+          <Form>
+            <Form.Group controlId="bootstrapName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" onInput={this.handleUsernameTyped} />
+            </Form.Group>
+          </Form>
+        </Container>
       </div>
     )
   }
