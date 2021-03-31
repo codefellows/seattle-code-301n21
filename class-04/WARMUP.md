@@ -11,11 +11,11 @@ In this warmup, we will remember how forms worked in Code 201 (the non-React way
       <form id="myForm">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" />
-
+        <br />
         <label for="dob">Date of Birth</label>
         <input type="date" name="dob" id="dob" />
-
-        <input type="submit">
+        <br />
+        <input type="submit" />
       </form>
     </main>
   </body>
