@@ -2,12 +2,12 @@
 
 ## Overview
 
-Today we will use the skills we learned over the week to build a new appliaction: city explorer! Your lab will be to take React starter code and turn it into a beautiful portfolio.
+Today we will use the skills we learned over the week to build a new application: city explorer! Your lab will be to take React starter code and turn it into a beautiful portfolio.
 
 ## Daily Plan
 
-- Warm-up exercise
-- Introduction of today's code challenge topic
+- Code challenge review: `.sort()`
+- [Warm-up exercise](./warm-up.md)
 - Build City Explorer (React)
 - Lab Preview
 
