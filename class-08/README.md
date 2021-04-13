@@ -10,9 +10,9 @@ Today we are going to be adding a persistence layer in the form of a SQL databas
 - Review code challenges
 - Introduction of today's code challenge topic
 - Code review of lab assignment
-- Relational vs. non-relational databases
-- Data modeling and schemas
-- Primary keys and foreign keys
+- Promises vs async / await
+- Superagent vs axios
+- more third party APIs
 - Code Demo
 - Lab Preview
 
