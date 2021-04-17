@@ -10,7 +10,7 @@ Today we will dive a little bit deeper into Express and higher level programming
 ## Daily Plan
 
 - Review code challenges
-- Code review of TMDB
+- Quick hints on TMDB
 - Refactoring
   - Warmup
   - Why
