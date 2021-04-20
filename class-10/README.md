@@ -2,13 +2,15 @@
 
 ## Overview
 
-Today we will talk about in-memory storage and caching, and how to apply simple in-memory caching to our applications.
+Today we will talk about in-memory storage and caching, and how to apply simple in-memory caching to our applications. We'll also practice debugging some starter code together, to keep honing our debugging skills.
 
 ## Daily Plan
 
 - Review code challenges
 - [Warm-up exercise](./warm-up.md)
 - In-memory persistence
+  - Debugging starter code
+  - Adding persistence
 - Lab Overview
 
 ## Learning Objectives
