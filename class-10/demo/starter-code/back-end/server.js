@@ -19,7 +19,7 @@ function getRecipes(request, response) {
     q:ingredient,
     app_id:process.env.FOOD_APP_ID,
     app_key:process.env.FOOD_APP_KEY
-  }
+  };
 
   superagent
     .get(url)
@@ -31,7 +31,7 @@ function getRecipes(request, response) {
     .catch(err => {
       console.err('error', err);
       response.status(500).send('error', err);
-    })
+    });
 }
 
 function Recipe(recipe) {
