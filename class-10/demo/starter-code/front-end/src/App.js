@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Recipe from './components/Recipe';
 
 class App extends React.Component {
   constructor(props){
@@ -27,15 +28,10 @@ class App extends React.Component {
         </form>
 
         {this.state.recipes.length && this.state.recipes.map((recipe, idx) => (
-          <div key={idx}>
-            <h2><a href={recipe.uri}>{recipe.name}</a></h2>
-            <img src={recipe.image_url} />
-            <ul>
-              {recipe.ingredients.map(ingredient => (
-                <li key={Math.random()}>{ingredient}</li>
-              ))}
-            </ul>
-          </div>
+          <Recipe
+            key={idx}
+            recipe={recipe}
+          />
           ))
         }
       </>
