@@ -22,17 +22,17 @@ class App extends React.Component {
     return(
       <>
         <form onSubmit={this.getRecipes}>
-          <label>enter an ingredient</label>
-          <input onChange={(e) => this.setState({ ingredient:e.target.value })} type="text" name="ingredient"></input>
+          <label htmlFor="ingredient">enter an ingredient</label>
+          <input onChange={(e) => this.setState({ ingredient:e.target.value })} type="text" name="ingredient" id="ingredient"></input>
           <button>submit</button>
         </form>
 
-        {this.state.recipes.length && this.state.recipes.map((recipe, idx) => (
+        {this.state.recipes.length ? this.state.recipes.map((recipe, idx) => (
           <Recipe
             key={idx}
             recipe={recipe}
           />
-          ))
+          )) : ''
         }
       </>
     )
