@@ -14,7 +14,7 @@ class App extends React.Component {
       <h1>Music</h1>
       {isAuthenticated ? <LogoutButton /> : <LoginButton />}
       {isAuthenticated ? user.name : ''}
-      {isAuthenticated ? <img src={user.picture} /> : ''}
+      {isAuthenticated ? <img src={user.picture} alt={user.name} /> : ''}
     </>
   }
 }
