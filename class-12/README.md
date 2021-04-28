@@ -6,10 +6,8 @@ Today is all about persistence. We will introduce Mongodb and Mongoose. We will 
 
 ## Daily Plan
 
-- Warm-up exercise
 - Review code challenges
-- Introduction of today's code challenge topic
-- Code review of lab assignment
+- [Warm-up exercise](./warm-up.md)
 - Mongo, Mongoose, Data Modeling
 - Code Demo
 - Lab Preview
