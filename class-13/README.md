@@ -6,10 +6,8 @@ Today we will focus on the `C` and the `D` of the `CRUD`:`CREATE` and `DELETE`. 
 
 ## Daily Plan
 
-- Warm-up exercise
 - Review code challenges
-- Introduction of today's code challenge topic
-- Code review of lab assignment
+- CRUD Overview
 - Creating a resource
 - Code Demo
 - Lab Preview
