@@ -76,15 +76,14 @@ class App extends React.Component {
   }
 
   // when the user clicks the update button
-  handleUpdate = (id) => {
-    console.log('updating gift', id);
-    // find the gift we want to update
-    let giftToUpdate = this.state.gifts.find(gift => gift._id === id);
+  handleUpdate = (giftToUpdate) => {
+    console.log('updating gift', giftToUpdate);
+
     // set the state based on that gift
     this.setState({
       name: giftToUpdate.name,
       description: giftToUpdate.description,
-      updatingGift: id,
+      updatingGift: giftToUpdate._id,
       isUpdating: true
     });
   }
@@ -110,7 +109,7 @@ class App extends React.Component {
         {this.state.gifts.map(gift => 
           <li key={gift._id}>
             {gift.name}: {gift.description} 
-            <button onClick={e => this.handleUpdate(gift._id)}>Update</button>
+            <button onClick={e => this.handleUpdate(gift)}>Update</button>
             <button onClick={e => this.handleDelete(gift._id)} >Delete</button>
           </li>
         )}
