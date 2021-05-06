@@ -2,7 +2,7 @@
 
 ## Overview
 
-Today is the final buildout of the book collection app. Our final step is to normalize our database and remove duplicates while persisting the books we have already saved.
+Today is the final buildout of the book collection app. Our final step is to update books in our application.
 
 ## Daily Plan
 
@@ -120,15 +120,3 @@ While you can run Mongo on your own machines, it's quite common to run an instan
      - Replace `<password>` with the password you created earlier
      - Replace `<dbname>` with the name of the database you want to use for your application, for example 'people'
      - Use this as  `MONGODB_URI` in your .env file or at Heroku when you deploy
-
-![Account Setup](assets/atlas-setup.png)
-
-![Choose Plan](assets/atlas-choose-plan.png)
-
-![Cluster](assets/atlas-cluster-screen.png)
-
-![Network Options](assets/atlas-network.png)
-
-![Connect](assets/atlas-connect-options.png)
-
-![Heroku Setup](assets/heroku-mongo.png)
