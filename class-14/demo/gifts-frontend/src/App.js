@@ -10,7 +10,9 @@ class App extends React.Component {
       description: '',
       email: '',
       gifts: [],
-      name: ''
+      name: '',
+      updatingGift: '',
+      isUpdating: false
     }
   }
   handleEmailInput = (e) => {
@@ -37,22 +39,55 @@ class App extends React.Component {
     });
   }
 
-  handleCreateGift = (e) => {
+  handleGiftFormSubmit = (e) => {
     e.preventDefault();
     console.log('name', this.state.name, 'email', this.state.email, 'description', this.state.description);
     // make the request to the server with the info the user typed in
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/gifts`, {
-      description: this.state.description,
-      email: this.state.email,
-      name: this.state.name
-    }).then( response => {
-      console.log(response.data);
-      this.setState({
-        gifts: response.data
-      })
-    });
+    if(this.state.isUpdating) {
+      // we're updating an existing gift
+      axios.put(`${process.env.REACT_APP_SERVER_URL}/gifts/${this.state.updatingGift}`,
+      {
+        description: this.state.description,
+        user: this.state.email,
+        name: this.state.name
+      }).then( response => {
+        console.log(response.data);
+        this.setState({
+          gifts: response.data,
+          // clear out the form & get ready for a create or update to happen next
+          isUpdating: false,
+          name: '',
+          description: ''
+        });
+      });
+    } else {
+      // we're creating a new gift
+      axios.post(`${process.env.REACT_APP_SERVER_URL}/gifts`, {
+        description: this.state.description,
+        email: this.state.email,
+        name: this.state.name
+      }).then( response => {
+        console.log(response.data);
+        this.setState({
+          gifts: response.data
+        })
+      });
+    }
   }
 
+  // when the user clicks the update button
+  handleUpdate = (id) => {
+    console.log('updating gift', id);
+    // find the gift we want to update
+    let giftToUpdate = this.state.gifts.find(gift => gift._id === id);
+    // set the state based on that gift
+    this.setState({
+      name: giftToUpdate.name,
+      description: giftToUpdate.description,
+      updatingGift: id,
+      isUpdating: true
+    });
+  }
   handleDelete = (id) => {
     axios.delete(`${process.env.REACT_APP_SERVER_URL}/gifts/${id}?user=${this.state.email}`).then(responseData => {
       this.setState({ 
@@ -73,15 +108,19 @@ class App extends React.Component {
       </form>
       {this.state.gifts.length > 0 && <ul>
         {this.state.gifts.map(gift => 
-          <li key={gift._id}>{gift.name}: {gift.description} <button onClick={e => this.handleDelete(gift._id)} >Delete</button></li>
+          <li key={gift._id}>
+            {gift.name}: {gift.description} 
+            <button onClick={e => this.handleUpdate(gift._id)}>Update</button>
+            <button onClick={e => this.handleDelete(gift._id)} >Delete</button>
+          </li>
         )}
         </ul>}
-      <form onSubmit={this.handleCreateGift}>
+      <form onSubmit={this.handleGiftFormSubmit}>
         <label htmlFor="name">Name</label>
-        <input id="name" type="text" onInput={this.handleNameInput}></input>
+        <input id="name" type="text" onInput={this.handleNameInput} value={this.state.name}></input>
         <br />
         <label htmlFor="description">Description</label>
-        <input id="description" onInput={this.handleDescriptionInput}></input>
+        <input id="description" onInput={this.handleDescriptionInput} value={this.state.description}></input>
         <br />
         <input type="submit" />
       </form>
