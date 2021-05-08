@@ -132,7 +132,7 @@ _Why:_
 ## Documentation
 Your project should be documented on GitHub and within your code base.
 
-On GitHub, create a `README.md` file as the main landing document of your repository. Continue to update it as your project evolves. 
+On GitHub, create a `README.md` file as the main landing document of both of your repositories. Continue to update it as your project evolves. 
 
 _Why:_
 > Projects should contain proper documentation so that anyone can visit your repository and understand the purpose of your application.
@@ -158,33 +158,6 @@ Comments should be updated as necessary. Remove all unused, commented-out code b
 
 [Back to top](#top)
 
-<a id="file-structure"></a>
-## File Structure
-Before you scaffold your files within your repo, determine how you will organize your project. Your files should be organized into folders in a meaningful manner. For example, all of your CSS files should be within a `css` folder.
-
-Here is an example file structure:
-
-```
-.
-├── package-lock.json
-├── package.json
-├── public
-├── server.js
-└── views
-    ├── index.ejs
-    ├── pages
-    │   ├── books
-    │   │   ├── new.ejs
-    │   │   └── show.ejs
-    │   ├── error.ejs
-    │   └── searches
-    │       ├── new.ejs
-    │       └── show.ejs
-    └── partials
-        ├── footer.ejs
-        ├── head.ejs
-        └── header.ejs
-```
 _Why:_
 > Your code should be modular and the files organized into smaller folders. This will make it easier for the team to consolidate logic to a single page or feature.
 
@@ -235,9 +208,11 @@ During standup, each team member will stand up and take turns discussing three p
 <a id="daily-goals"></a>
 ## Daily Goals
 
-Day 1: Pitch the idea to your instructor. Once the idea is approved, create your repository, fill your project board with issues, and begin scaffolding your files. Deploy your site, then begin to build features.
+Day 0-1: Pitch the idea to your instructor. Project Prep #1, #2 and #3. Once the idea is approved, create your repository, fill your project board with issues, and begin scaffolding your files. Deploy your site.
 
-Day 2: This should be a big build-out day of features.
+Day 1-2: Project Prep #4 - Plan your application and begin to build features.
+
+Day 2-4: This should be a big build-out day of features.
 
 Day 3: Continue to build out features. Strive for full MVP by the end of the day.
 
@@ -311,7 +286,9 @@ _Why:_
 <a id="deployment"></a>
 ## Deployment
 
-Deploy your project on Heroku and be prepared to present from the deployed version of your site. Associate your Heroku instance with your GitHub repository. Enable automatic deploys from your main branch. Also connect your production deployment to a custom domain name (don't use a `.app` TLD unless you are prepared to pay for SSL on your Heroku instance). 
+Deploy your front-end on Netlify and be prepared to present from the deployed version of your site. Associate your Netlify instance with your GitHub repository. Enable automatic deploys from your main branch. Also connect your production deployment to a custom domain name (don't use a `.app` TLD unless you are prepared to pay for SSL on your Netlify instance). 
+
+Deploy your server on Heroku and be prepared to present from the deployed version of your site. Associate your Heroku instance with your GitHub repository. Enable automatic deploys from your main branch. Also connect your production deployment to a custom domain name (don't use a `.app` TLD unless you are prepared to pay for SSL on your Heroku instance). 
 
 _Why:_
 > Deployed sites provide a unique URL that can be shared with anyone. You will also want to include this URL in your portfolio. Registering a custom domain name is a great way to think through how the internet works! 
@@ -321,7 +298,7 @@ Deploy your site on the first day.
 _Why:_
 > Ensure that you have a deployed site at the beginning of the project so you have a live site where you can view your changes, in addition to testing your code locally. Deploying on the first day also ensures that you will have a live site in the case that GitHub goes down on presentation day. (It happens!)
 
-After the initial repository creation, scaffold out a basic `server.js` and basic `index.ejs` file with a heading element or something similar. Then push this code to GitHub and deploy it as a "proof of life" that the deployment worked correctly. As you continue to work on your project, the deployed site will update any time the team merges a pull request into the main branch. You also have the option to set this to a different branch, although it is most common to deploy from the main branch.
+After the initial repository creation, scaffold out a basic `server.js` file with a heading element or something similar. Then push this code to GitHub and deploy it as a "proof of life" that the deployment worked correctly. As you continue to work on your project, the deployed site will update any time the team merges a pull request into the main branch. You also have the option to set this to a different branch, although it is most common to deploy from the main branch.
 
 [Back to top](#top)
 
@@ -362,38 +339,42 @@ Individual effort is graded based on links to commits and Pull Requests that dem
 
 Technical merit is graded based on the following criteria:
 
-- Good and proper use of HTML and EJS
+### Front-End
+- Good and proper use of React
   - Clear, readable, and efficient structure
-  - Uses semantic markup whenever possible
-  - Organized into pages and partials for DRY code
+  - Correctly passes props to children components
+  - Organized into nested components for DRY code
 
-- Good and proper use of CSS
+- Good and proper use of React-Bootstrap
   - Clear, readable, and efficient styles
-  - Designed with a mobile-first approach, including at least one breakpoint
-  - Appropriate page layout for desktop
-  - Uses relative units wherever possible for a responsive design
-  - Well-organized file structure following SMACSS principles
+  - Designed with a mobile-first approach
 
-- Good and proper use of JavaScript and jQuery
+- Good and proper use of JavaScript
   - Clear, readable, and efficient code
   - Uses domain models to encapsulate data and behavior, such as objects and constructors
-  - Uses jQuery to respond to user events, receive and process user input, and display new content to the user with AJAX as appropriate
+  - Uses React to respond to user events, receive and process user input, and display new content to the user
   - Contains no unnecessary or commented-out code
 
-- The project must utilize at least one third-party API
+- [Deployed](#deployment) live on the Internet via Netlify
 
+- Clear documentation in the README.md
+  - See the [documentation guidelines](#documentation) provided above
+
+### Back-End
+
+- The project must utilize at least one third-party API
 - Server side code must:
   - Use Node and Express, and other NPM packages as appropriate
-  - Utilize a SQL database as described in detail below
+  - Utilize a Mongo database as described in detail below
   - Routes should follow standard REST conventions
-
-- Data is persisted in a SQL database
-  - PostgreSQL database provisioned on the Heroku instance
+- Data is persisted in a Mongo database
+  - Mongo database provisioned using Atlas (see README from class 14)
   - Logical schemas with appropriate data types
-  - Data model that maps to the problem domain and uses relational connections, such as joins, as necessary
+  - Data model that maps to the problem domain
   - Ability to read records from the database
   - Ability to create new resources and persist them in the database
-  - Ability to either update or delete records from the database
+  - Ability to update records in the database
+  - Ability to delete records in the database
 
 - Clear documentation in the README.md
   - See the [documentation guidelines](#documentation) provided above
